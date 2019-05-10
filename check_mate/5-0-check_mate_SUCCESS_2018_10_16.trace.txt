@@ -1,0 +1,86 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r6p10.42.fr
+Darwin 16.7.0 x86_64
+$> date
+Tue Oct 16 11:28:26 CEST 2018
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/exam_20181016/lcabanes
+
+= Git history ==================================================================
+$> git -C /var/folders/ns/rqj8myd95sxdm_lgndqw1xh80000gq/T/tmpqSZB9n/user log --pretty='%H - %an, %ad : %s'
+a04bfbc6ec3067510fe2a1e66310c37c698790dd - Exam 42, Tue Oct 16 11:23:10 2018 +0200 : Ajout de "check_mate"
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/ns/rqj8myd95sxdm_lgndqw1xh80000gq/T/tmpqSZB9n/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  465 Oct 16 11:28 __GIT_HISTORY
+drwxr-xr-x  7 deepthought  deepthought  238 Oct 16 11:28 check_mate
+
+/var/folders/ns/rqj8myd95sxdm_lgndqw1xh80000gq/T/tmpqSZB9n/user/check_mate:
+total 40
+-rw-r--r--  1 deepthought  deepthought  1434 Oct 16 11:28 check_mate.h
+-rw-r--r--  1 deepthought  deepthought  3710 Oct 16 11:28 ft_check_chessboard.c
+-rw-r--r--  1 deepthought  deepthought  1336 Oct 16 11:28 ft_locate_king.c
+-rw-r--r--  1 deepthought  deepthought  1115 Oct 16 11:28 ft_putstr.c
+-rw-r--r--  1 deepthought  deepthought  1242 Oct 16 11:28 main_check_mate.c
+ 
+= check_mate ===================================================================
+$> clang -Wextra -Wall -Werror ft_locate_king.c ft_check_chessboard.c main_check_mate.c ft_putstr.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./n3j4vapsvsdmp8kfqf0q68ma 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./5ot0vuvcnb74vrp63l2j7l3j '...B.' '.B...' '$%^&*' '...K.' '.....'
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./mgixnfg51ndeso9hdxm0axyb  "...B." ".T..." "....." "...K." "....."
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./f7uf8w2spow6oskuf8141r9c "K"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./8kt9nzlr9p3f4z5kqmsh6uxt "BPKP" "PRP." ".Q.." "..P."
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./1z93i8cpgx69hccaiixmxbku "B....." "......" "......" "......" "......" ".....K"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./mq1ixc79y3uflkt36cdt79qn "K....." "......" "......" "......" "......" ".....B"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./zblwh01i0nv7wjgdfc5wv10e '........' '........' '.P....P.' '...B.B..' '....Q...' '..R..R..' '......K.' '...R....'
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

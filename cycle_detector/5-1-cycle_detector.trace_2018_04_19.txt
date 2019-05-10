@@ -1,0 +1,64 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e3r12p17.42.fr
+Darwin 16.7.0 x86_64
+$> date
+Thu Apr 19 19:58:13 CEST 2018
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/exam_20180419/lcabanes
+
+= Git history ==================================================================
+$> git -C /var/folders/7s/hy85fhcn15b9j2s17y822dn40000gq/T/tmpjnLaPg/user log --pretty='%H - %an, %ad : %s'
+6fc3fd0e73d2e8982f0957ccddaf6419504c1460 - Exam 42, Thu Apr 19 19:58:01 2018 +0200 : Ajout de "cycle_detector"
+8797c72ca6db24596a0b136877afba75e1ee91f6 - Exam 42, Thu Apr 19 19:29:53 2018 +0200 : Ajout de "options"
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/7s/hy85fhcn15b9j2s17y822dn40000gq/T/tmpjnLaPg/user
+total 8
+-rw-r--r--   1 deepthought  deepthought  939 Apr 19 19:58 __GIT_HISTORY
+drwxr-xr-x   3 deepthought  deepthought  102 Apr 19 19:58 cycle_detector
+drwxr-xr-x  11 deepthought  deepthought  374 Apr 19 19:58 options
+
+/var/folders/7s/hy85fhcn15b9j2s17y822dn40000gq/T/tmpjnLaPg/user/cycle_detector:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1660 Apr 19 19:58 cycle_detector.c
+
+/var/folders/7s/hy85fhcn15b9j2s17y822dn40000gq/T/tmpjnLaPg/user/options:
+total 72
+-rw-r--r--  1 deepthought  deepthought  1068 Apr 19 19:58 ft_contains_h.c
+-rw-r--r--  1 deepthought  deepthought   977 Apr 19 19:58 ft_invalid_option.c
+-rw-r--r--  1 deepthought  deepthought  1100 Apr 19 19:58 ft_is_lowercase_alpha.c
+-rw-r--r--  1 deepthought  deepthought  2154 Apr 19 19:58 ft_options.c
+-rw-r--r--  1 deepthought  deepthought  1151 Apr 19 19:58 ft_putstr.c
+-rw-r--r--  1 deepthought  deepthought  1028 Apr 19 19:58 ft_two_power_n.c
+-rw-r--r--  1 deepthought  deepthought   989 Apr 19 19:58 ft_usage.c
+-rw-r--r--  1 deepthought  deepthought  1064 Apr 19 19:58 main.c
+-rw-r--r--  1 deepthought  deepthought  1367 Apr 19 19:58 options.h
+ 
+= cycle_detector ===============================================================
+$> clang -Wextra -Wall -Werror main.c test_cycle_detector.c cycle_detector.c -o user_exe 
+cycle_detector.c:29:15: error: incompatible pointer types assigning to 't_list *' (aka 'struct s_list *') from 't_list **' (aka 'struct s_list **'); dereference with * [-Werror,-Wincompatible-pointer-types]
+                        *(tmp + j) = *(witness + j);
+                                   ^ ~~~~~~~~~~~~~~
+cycle_detector.c:50:17: error: assigning to 't_list *' (aka 'struct s_list *') from 'const t_list *' (aka 'const struct s_list *') discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+        *(witness + 0) = list;
+                       ^ ~~~~
+2 errors generated.
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================
